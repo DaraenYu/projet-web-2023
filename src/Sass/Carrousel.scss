@@ -1,0 +1,32 @@
+.Carrousel {
+  padding-bottom: 3rem;
+
+  .container {
+    overflow: hidden;
+    
+    img {
+      height: 10rem;
+      padding: 1rem;
+      pointer-events: none;
+    }
+
+    .slider1, .slider2 {
+      white-space: nowrap;
+    }
+
+    .img-container {
+      display: inline-block; 
+      animation: scrollX 50s infinite linear;
+    }
+
+    @keyframes scrollX {
+      from {
+        transform: translateX(0); 
+      }
+
+      to {
+        transform: translateX(-100%); 
+      }
+    }
+  }
+}

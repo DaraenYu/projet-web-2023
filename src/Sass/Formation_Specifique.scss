@@ -1,0 +1,335 @@
+.Formation_Specifique {
+
+    .displayNone {
+        display: none;
+    }
+
+    #select-session, #select-type {
+        cursor: pointer;
+    }
+    
+    .cours-section1 {
+        
+        .cours-section1-hero {
+         
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-bottom: 2rem;
+        background-color: var(--couleur-fond-cours);
+        
+
+            .titreCours {
+                margin: 0 auto;
+                padding: 1.5rem;
+                flex: 1; /* Make it take up available space */
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                h1 {
+                    padding-top: 1rem;
+                }
+
+                h2, h1 {
+                    font-size: 1.6rem;
+                }
+            }
+
+            .imageCours {
+                flex: 1; /* Make it take up available space */
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-top: 2rem;
+                margin-bottom: 2rem;
+                pointer-events: none;
+
+                img {
+                    border-radius: 0.2rem;
+                    max-width: 50%;
+                    max-height: 50%;
+                    object-fit: contain;
+                }
+            }
+        }
+
+        
+
+        @media screen and (min-width: 768px) {
+            .cours-section2-tabs {
+                .nav-tabs {
+                    justify-content: start;
+                        padding-left: 2rem;
+                }
+            }
+        }
+
+
+        @media screen and (min-width: 992px) {
+           
+
+            .cours-section1-hero {
+                height: 80dvh;
+                flex-direction: row;
+                justify-content: center;
+
+                .titreCours {
+                    text-align: left;
+                    }
+
+                .imageCours {
+                    
+                    img {
+                        max-width: 70%;
+                        max-height: 70%;
+                    }
+                }
+            }
+
+        }
+
+        @media screen and (min-width:1600px) {
+            .imageCours {
+
+                img {
+                    max-width:50%;
+                    max-height:50%;
+                }
+            }
+        }
+        
+    }
+
+    /**************Section des tabs********************************/
+    .cours-section2-tabs {
+        position: relative;
+        bottom: 3.7rem;
+        width: 90dvw;
+        padding:0 5dvw;
+        
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            margin-left: 1rem;
+            
+
+            .nav-items {
+                list-style-type: none;
+                padding: 0.8rem;
+                font-size: 1rem; // A voir trop petite initial 12px
+                color: var(--couleur-primaire);
+                text-align: center;
+                cursor: pointer;
+            }
+
+            /* background couleur temporaire. Cela sera fait avec du js*/
+            .active {
+                background-color: var(--couleur-fond);
+                transition: background-color 0.6s ease;
+            }
+
+        }
+
+        @media screen and (min-width: 441px) {
+            bottom: 2.5rem;
+        }
+
+        @media screen and (min-width: 768px) {
+            bottom: 2.9rem;
+            
+        }
+
+        @media screen and (min-width: 992px) {
+            right: 6rem;
+        }
+}
+
+    .cours-section2 {
+        // border: 1px solid red;
+        width: 90dvw;
+        padding: 1dvw 5dvw;
+
+        .filtrage-cours {
+            padding-left: 1rem;
+            padding-bottom: 1rem;
+
+            // .MenuFiltre {
+            //     display: flex;
+            //     gap: 1rem;
+
+            //     select {
+            //         padding: 0.1rem 0.2rem;
+            //         font-size: 0.8rem;
+                    
+            //     }
+
+            // }
+
+            /* background couleur temporaire. Cela sera fait avec du js
+                btn active filtre
+            */
+
+            // .MenuFiltre {
+            //     label {
+            //         cursor: pointer;
+            //         border: 2px solid var(--couleur-principale);
+            //         border-radius: 0.25rem;
+            //         padding: 0.25rem 0.2rem;
+            //         margin-right: 0.2rem;
+            //         background-color: var(--couleur-accent);
+            //         color: white;
+            //     }
+            // }
+
+            p {
+                padding-top: 1rem; 
+            }
+
+            @media screen and (min-width:768px) {
+                padding-left: 2rem;
+            }
+
+        }
+
+        .cours-accordeon-section {
+            width: calc(100% - 2rem);
+            margin: 0 auto;
+            position: relative;
+
+            .cours-accordeon-groupe {
+                cursor: pointer;
+                padding: 1rem 0;
+                border-top: 2px solid var(--couleur-principale);
+                
+                &:last-child {
+                    border-bottom: 2px solid var(--couleur-principale);
+                }
+
+                .cours-titre {
+                    font-size: 0.7rem;
+                }
+    
+                .cours-ponderation {
+                    padding-bottom: 1rem;
+                }
+    
+                .cours-fleche {
+                    position:absolute;
+                    right: 0;
+                    top: 50;
+                    transition: transform 0.5s;
+    
+                    &.rotate {
+                        transform: rotate(180deg);
+                    }
+    
+                }
+    
+                .cours-info-unite {
+                    display: flex;
+                    gap: 1rem;
+                    padding-top: 0.5rem;
+                    font-size: 0.8rem;
+                }
+    
+    
+                @keyframes slideIn {
+                    from {
+                      opacity: 0;
+                      transform: translateY(-10px);
+                    }
+                    to {
+                      opacity: 1;
+                      transform: translateY(0);
+                    }
+                  }
+                  
+                  .cours-info-animation {
+                    animation: slideIn 0.8s ease both;
+                  }
+            }
+
+            
+
+            @media screen and (min-width: 768px) {
+                width: calc(100% - 4rem);
+            }
+        }
+
+        
+    }
+
+    .cours-section3 {
+        text-align: center;
+        margin: 2rem 0;
+        width: 90dvw;
+        padding: 0 5dvw;
+
+        p {
+
+            cursor: pointer;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        
+
+        .lightbox-modal {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+            text-align: center;
+
+            .lightbox-image {
+                display: block;
+                position: absolute;
+                object-fit: contain;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                max-width: 90%;
+                max-height: 75%;
+    
+                border: 0.25rem solid var(--couleur-principale);
+                border-radius: 0.25rem;
+
+                }
+            }
+
+                .fermer-button {
+                    position: absolute;
+                    top:  300px;
+                    right: 10px;
+                    font-size: 2rem;
+                    cursor: pointer;
+
+                    /***fix temporaire position X pour la revue seulement***/
+                    @media screen and (min-width: 441px) {
+                        top: 250px;
+                    }
+
+                    @media screen and (min-width: 768px) {
+                        top: 150px;
+                        
+                    }
+
+                    @media screen and (min-width: 992px) {
+                        display: none;
+                        
+                    }
+                }
+
+            }
+    }

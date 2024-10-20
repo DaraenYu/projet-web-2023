@@ -1,0 +1,182 @@
+.Projets_Etudiants {
+  display: flex;
+  flex-direction: column;
+
+  // ------ SECTION 1 ------
+  .projets-section1 {
+    width: 90dvw;
+    padding: 4dvh 5dvw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--couleur-fond-cours);
+
+    // Textes du section 1
+    .projets-section1-texte {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h1 {
+        padding-top: 1rem;
+      }
+      
+      h2, h1 {
+        font-size: 1.6rem;
+      }
+    }
+
+    // Images du section 1
+    .projets-image {
+      flex: 1;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding-top: 2rem;
+      margin-bottom: 2rem;
+      pointer-events: none;
+      
+
+      img {
+        width: 90%;
+        object-fit: contain;
+      }
+    }
+
+    @media screen and (min-width: 992px) {
+      flex-direction: row;
+      text-align: left;
+      min-height: 80dvh;
+
+      .projets-image {
+        justify-content: flex-end;
+
+        img {
+          width: 100%;
+          margin-top: 6rem;
+          margin-left: 2rem;
+        }
+      }
+    }
+  }
+
+  // ------ SECTION 2 ------
+  .projets-section2 {
+    padding-bottom: 3rem;
+    
+    .MenuFiltre {
+      padding-top: 2rem;
+      padding-left: 1.5rem;
+
+      #select-type {
+        cursor: pointer;
+      }
+    }
+
+    // Conteneur de tous les projets
+    .conteneur-projets {
+      display: flex;
+      justify-content: center;
+      padding-top: 2rem;
+      flex-wrap:wrap;
+      row-gap: 2rem;
+      column-gap: 2dvw;
+
+      @media screen and (min-width: 768px) {
+        justify-content: flex-start;
+        padding-left: 1.5dvw;
+        padding-right: 1.5dvw;
+      }
+
+      @media screen and (min-width: 768px) and (max-width: 1200px) {
+        justify-content: center;
+      }
+
+      // Projets individuelles
+      .projet-individuel {
+        position: relative;
+        width: 90dvw;
+        height: 70dvw;
+
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+
+        border: 2px solid var(--couleur-secondaire);
+        border-radius: 6px;
+        cursor: pointer;
+        /* animation du hover */
+        transition: scale 0.4s;
+
+        &:hover {
+          scale: 1.025;
+        }
+        
+        @media screen and (min-width: 768px) and (max-width: 1200px) {
+          width: 40dvw;
+          height: 30dvw;
+        }
+
+        @media screen and (min-width: 1200px) {
+          width: 30dvw;
+          height: 25dvw;
+        }
+
+        // Informations des projets
+        .projet-infos {
+          position: absolute;
+          bottom: 0;
+          width: 95%;
+          height: 5rem;
+          padding: 0 2.5%;
+
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: center;
+          align-items: flex-start;
+
+          border-bottom-right-radius: 4px;
+          border-bottom-left-radius: 4px;
+
+          background-color: var(--couleur-secondaire);
+
+          h1 {
+            font-size: var(--taille-mobile-texte);
+
+            @media screen and (min-width: 768px) {
+              font-size: var(--taille-tablette-texte);
+            }
+          
+            @media screen and (min-width: 992px) {
+              font-size: var(--taille-bureau-texte);
+            }
+          }
+
+          p {
+            font-size: 0.7rem;
+
+            @media screen and (min-width: 768px) {
+              font-size: 0.6rem;
+            }
+
+            &:last-child {
+              color: var(--couleur-accent);
+            }
+          }
+        }
+
+        // Image des projets
+        .projet-image {
+          width: 100%;
+          height: 100%;
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+}

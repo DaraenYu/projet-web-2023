@@ -1,0 +1,70 @@
+.MenuFiltre {
+  display: flex;
+  gap: 1rem;
+
+  .filtre-individuel:nth-child(2) {
+    .boutons-Selection {
+      width: 12rem;
+      &:hover {
+        background-color: var(--couleur-hover);
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  .filtre-individuel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+
+    .boutons-Selection {
+      position: relative;
+      background-color: var(--couleur-principale);
+      border-radius: 0.1rem;
+      padding: 0;
+      user-select: none;
+      cursor: pointer;
+
+      .filtre-selection {
+        padding: 0.5rem;
+        width: 22dvw;
+        color: var(--couleur-texte-clair);
+
+        &:hover {
+          background-color: var(--couleur-hover);
+          text-decoration: underline;
+        }
+      }
+
+      .boutons-filtre {
+        position: absolute;
+        display: flex;
+        flex-flow: column nowrap;
+        width: 100%;
+
+        .element-filtre {
+          height: 1.2rem;
+          z-index: 10000;
+          width: 100%;
+          font-size: 0.8rem;
+          
+
+          &:last-child {
+           text-align: left;
+          }
+
+        }
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+
+  // select {
+  //   padding: 0.1rem 0.2rem;
+  //   font-size: 0.8rem;
+  // }
+}

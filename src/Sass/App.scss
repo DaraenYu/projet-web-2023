@@ -1,0 +1,173 @@
+// Les styles ici s'applique sur le site au complet
+
+.App {
+  color: var(--couleur-texte);
+  display: flex;
+  flex-direction: column;
+  background-repeat: repeat-x;
+  animation: circles 20s linear infinite alternate;
+}
+
+.margin-entete {
+  margin-top: 2.6rem;
+}
+
+@keyframes circles {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+.aside {
+  padding: 4rem 1rem;
+  padding-bottom: 0;
+  
+  @media screen and (min-width: 992px) {
+    padding: 2rem 1rem;
+    padding-bottom: 0;
+  }
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+
+  a {
+    width: 100%;
+    padding-top: 1rem;
+    color: var(--couleur-texte);
+  }
+
+  .contenu-aside {
+    width: 100%;
+    padding: 1rem 0;
+    margin: 1rem 0;
+    border-top: 2px solid var(--couleur-principale);
+    border-bottom: 2px solid var(--couleur-principale);
+
+    p {
+      width: 100%;
+      padding: 0.5rem 0;
+    }
+  }
+
+  .nom-aside, .annee-aside {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding-bottom: 1rem;
+  }
+
+  &:not(:has(.annee-aside)) {
+    .nom-aside span {
+      width: 100%;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--couleur-principale);
+    }
+  }
+
+  &:has(.annee-aside) {
+    .annee-aside span {
+      width: 100%;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--couleur-principale);
+    }
+  }
+
+  .conteneur-image-aside {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    row-gap: 1rem;
+    padding-bottom: 1rem;
+
+    @media screen and (min-width: 992px) {
+      align-items: flex-start;
+    }
+
+    .image-aside {
+      width: 80dvw;
+      height: 50dvw;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      @media screen and (min-width: 992px) {
+        width: 40dvw;
+        height: 25dvw;
+      }
+    }
+  }
+}
+
+.aside-anim-opacity {
+  width: 100dvw;
+  height: 100dvh;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 666;
+  opacity: 0;
+
+  animation: asideOpacity 300ms linear forwards alternate;
+}
+
+.aside-anim-fill {
+  width: 100dvw;
+  height: 100dvh;
+
+  @media screen and (min-width: 992px) {
+    width: 50dvw;
+  }
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background-color: var(--couleur-secondaire);
+  z-index: 999;
+  transform: translateX(-100%);
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  animation: asideFill 300ms linear forwards alternate;
+
+  button {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    @media screen and (min-width: 992px) {
+      display: none;
+    }
+  }
+}
+
+@keyframes asideFill {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+@keyframes asideOpacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

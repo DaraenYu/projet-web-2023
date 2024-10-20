@@ -1,0 +1,71 @@
+// Les styles ici s'applique sur le pied de page
+
+.Pdp {
+  background-color: var(--couleur-principale);
+  height: 30dvh;
+  color: #FFFFFF;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+    "adresse adresse"
+    "joindre media"
+  ;
+  padding: 1rem 0;
+  justify-items: center;
+  align-items: center;
+
+  section {width: initial;}
+
+  a {
+    color: var(--couleur-texte-clair);
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .media {
+    a {
+      width: 36px;
+      height: 36px;
+
+      svg {
+        width: 36px;
+        height: 36px;
+      }
+    }
+    @media screen and (min-width: 768px) {
+      a {
+        width: 56px;
+        height: 56px;
+  
+        svg {
+          width: 56px;
+          height: 56px;
+          scale: 1;
+          transition: scale 150ms linear;
+          &:hover {
+            scale: 1.125;
+          }
+        }
+      }
+    }
+  }
+}
+
+.adresse {
+  text-align: center;
+  grid-area: adresse;
+}
+
+.joindre {
+  grid-area: joindre;
+  display: flex;
+  flex-direction: column;
+
+  p:nth-child(1) {
+    font-weight: bold;
+  }
+}
+
+.media {grid-area: media;}

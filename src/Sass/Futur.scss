@@ -1,0 +1,148 @@
+.Futur {
+    display: flex;
+    flex-direction: column;
+
+    // Section 1 (Introduction)
+    .introduction {
+        width: 90dvw;
+        padding: 4dvh 5dvw;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 2rem;
+        background-color: var(--couleur-fond-cours);
+
+        .texte-futur {
+            margin: 0 auto;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            h1 {
+                padding-top: 1rem;
+            }
+
+            h2, h1 {
+                font-size: 1.6rem;
+                color: var(--couleur-primaire);
+            }
+        }
+
+        .image-futur {
+            flex: 1;
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 2rem;
+            margin-bottom: 2rem;
+            pointer-events: none;
+
+            img {
+                border-radius: 0.2rem;
+                max-width: 50%;
+                max-height: 50%;
+                object-fit: contain;
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            flex-direction: row;
+            text-align: left;
+
+            .texte-futur {
+                font-size: 1.2rem;
+            }
+
+            .image-futur {
+                img {
+                    max-width: 80%;
+                    max-height: 80%;
+                    margin-left: 4rem;
+                }
+            }
+        }
+
+        @media screen and (min-width: 1600px) {
+            .image-futur {
+                img {
+                    max-width: 60%;
+                    max-height: 60%;
+                    margin-left: 10rem;
+                }
+            }
+        }
+    }
+
+    // Section 2 (Stage)
+    .stage {
+        display: flex;
+        flex-direction: column;
+
+        width: 90dvw;
+        padding: 4dvh 5dvw;
+        padding-top: 2rem;
+
+        .stage-fin-etudes, .stage-ate {
+            flex: 1;
+            padding: 1.375rem;
+        }
+
+        .ligne-separation {
+            display: block;
+            width: 100%;
+            border: 2px solid var(--couleur-hover);
+            padding-left: auto;
+            padding-right: auto;
+        }
+    }
+
+    // Section 3 (Emploi)
+    .emploi {
+        display: flex;
+        flex-direction: column;
+        
+        width: 90dvw;
+        padding: 0 5dvw;
+
+        h2, ul, li {
+            flex: 1;
+        }
+
+        h2 {
+            padding: 1.375rem;
+        }
+
+        ul, li {
+            padding-left: 2.5rem;
+            padding-top: 0.2rem;
+            padding-bottom: 1rem;
+        }
+    }
+
+    // Section 4 (Université)
+    .universite {
+        display: flex;
+        flex-direction: column;
+        width: 90dvw;
+        padding: 4dvh 5dvw;
+        padding-bottom: 4rem;
+
+        h2, a {
+            flex: 1;
+            padding: 1.375rem;
+        }
+
+        a:link, a:visited {
+            color: var(--couleur-texte);
+            text-decoration: none;
+        }
+
+        a:hover, a:active {
+            color: var(--couleur-hover);
+            text-decoration: underline;
+        }
+    }
+}

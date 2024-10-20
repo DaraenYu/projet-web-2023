@@ -1,0 +1,366 @@
+.Accueil {
+  display: flex;
+  flex-direction: column;
+
+  .accueil-section1 {
+    display: flex;
+    align-items: center;
+
+    .accueil-text {
+      position: absolute;
+      z-index: 1;
+      color: var(--couleur-texte-clair);
+      display: flex;
+      flex-direction: column;
+      width: 90dvw;
+      padding: 5rem 5dvw 10rem 5dvw;
+
+      @media screen and (min-width: 768px) {
+        width: 80dvw;
+        padding: 10rem 10dvw 15rem 10dvw;
+        text-align: center;
+      }
+
+      @media screen and (min-width: 1200px) {
+        padding: 5rem 10dvw 15rem 10dvw;
+      }
+
+      .animer-titre{
+        animation:animer-titre 1s 0.5s both;
+        padding-bottom: 1rem;
+
+        @media screen and (min-width: 1600px) {
+          font-size: 3rem;
+        }
+      }      
+
+      @keyframes animer-titre{
+        0%{text-shadow:0 0 var(--couleur-principale),0 0 var(--couleur-principale),0 0 var(--couleur-principale),0 0 var(--couleur-principale),0 0 var(--couleur-principale),0 0 var(--couleur-principale),0 0 var(--couleur-principale),0 0 var(--couleur-principale);
+          transform:translateX(0) translateY(0)
+        }
+        100%{text-shadow:-1px 1px var(--couleur-principale),-2px 2px var(--couleur-principale),-3px 3px var(--couleur-principale),-4px 4px var(--couleur-principale),-5px 5px var(--couleur-principale),-6px 6px var(--couleur-principale),-7px 7px var(--couleur-principale),-8px 8px var(--couleur-principale);
+          transform:translateX(8px) translateY(-8px)}
+      }
+    }
+
+    .accueil-text > p:nth-child(2) {
+      @media screen and (min-width: 1600px) {
+        font-size: 1.3rem;
+      }
+    }
+  
+    .accueil-video {
+      width: 100dvh;
+      filter: brightness(33%);
+      pointer-events: none;
+
+      @media screen and (min-width: 768px) {
+        width: 100dvw;
+      }
+    }
+
+    span.titre-bg:nth-child(2) {
+      // align-self: center;
+
+      @media screen and (min-width: 768px) {
+        align-self: center;
+      }
+    }    
+  }
+
+  .accueil-section2, .accueil-section3, .accueil-section4, .accueil-section5, .accueil-section6, .accueil-section-profs {
+    display: flex;
+    flex-direction: column;
+    width: 90dvw;
+    padding: 3rem 5dvw;
+    row-gap: 2rem;
+
+    @media screen and (min-width: 1600px) {
+      padding: 5rem 5dvw;
+    }
+  }
+
+  // SECTIONS AVEC BG DE COULEUR
+  .accueil-section3, .accueil-section6, .accueil-section-technologies {
+    padding: unset;
+    background-color: var(--couleur-fond-cours);
+    width: 100dvw;
+
+    @media screen and (min-width: 1600px) {
+      padding: unset;
+    }
+  }
+
+  .accueil-section3 > h1:nth-child(1), .accueil-section6 > h1:nth-child(1) {
+    padding: 3rem 5dvw;
+    padding-bottom: 0;
+  }
+  
+  .accueil-section6 > ul:nth-child(2) {
+    padding-left: 5dvw;
+    padding-right: 5dvw;
+  }
+
+  // SECTION 2 - CODE SNIPPET 
+  .accueil-section2 {
+
+    .accueil-text-code {
+      display: flex;
+      flex-direction: column;
+      row-gap: 2rem;
+
+      @media screen and (min-width: 1200px) {
+        flex-direction: row;
+        align-items: center;
+        column-gap: 1rem;
+      }
+
+      .accueil-text-section2 {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+      }
+
+      .accueil-code {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+  
+        @media screen and (min-width: 768px) {
+          flex-direction: row;
+          align-items: flex-end;
+        }
+
+        .accueil-code-input, .accueil-code-resultat {
+          display: flex;
+          flex-direction: column;
+          width: 80dvw;
+  
+          @media screen and (min-width: 768px) {
+            width: 40dvw;
+          }
+  
+          @media screen and (min-width: 1200px) {
+            width: 25dvw;
+          }
+        }
+  
+        .accueil-code-nav {
+          display: flex;
+          padding-left: 1rem;
+          padding-right: 1rem;
+          gap: 0.3rem;
+
+          button {
+            background-color: var(--couleur-fond-code);
+            border: solid var(--couleur-texte) 1.5px;
+            border-radius: 0.5rem 0.5rem 0 0;
+            color: var(--couleur-texte-clair);
+            padding: 0.95rem;
+            border-bottom: none;
+            font-family: var(--police-prog);
+
+            @media screen and (min-width: 768px) {
+              padding: 0.3rem;
+            }
+    
+            &:hover {
+              background-color: var(--couleur-accent);
+              cursor: pointer;
+            }
+
+            &:focus {
+              background-color: var(--couleur-accent);
+            }
+          }
+
+          label {
+            font-size: 1rem;
+            font-family: var(--police-header);
+            color: #1F1F1F;
+            background-color: var(--couleur-accent);
+            margin-left: auto;
+            border: solid var(--couleur-texte) 1.5px;
+            border-bottom: none;
+            border-radius: 0.5rem 0.5rem 0 0;
+            padding: 0.3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          button:nth-child(3) {
+            font-size: 1rem;
+            font-family: var(--police-header);
+            background-color: var(--couleur-accent);
+            margin-left: auto;
+          }
+        }
+  
+        .accueil-code-snippet {
+          background-color: var(--couleur-fond-code);
+          border: solid var(--couleur-texte) 1.5px;
+          border-radius: 8px;
+          color: var(--couleur-texte-clair);
+          padding: 0.5rem;
+          font-family: var(--police-prog);
+          height: 25vh;
+          resize: none;
+
+          &::-webkit-scrollbar, &::-webkit-scrollbar-track, &::-webkit-scrollbar-thumb {
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+          }
+  
+          @media screen and (min-width: 768px) {
+            height: 30vh;
+          }
+        }
+      }
+    }
+  }
+
+  // SECTION 2.5 - PROFESSEURS
+  .accueil-section-profs {
+    .accueil-text-section-profs {
+      display: flex;
+      flex-direction: column-reverse;
+      row-gap: 2rem;
+      
+      @media screen and (min-width: 996px) {
+        flex-direction: row;
+        column-gap: 1rem;
+        row-gap: initial;
+      }
+
+      img {
+        width: 80dvw;
+        border-radius: 0.2rem;
+        filter: contrast(90%);
+        pointer-events: none;
+
+        @media screen and (min-width: 996px) {
+          height: 30dvw;
+        }
+      }
+    }
+  }
+
+  .accueil-section3, .accueil-section5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .accueil-boutons-nav {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+    width: 50%;
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 2rem;
+      justify-items: center;
+      width: initial;
+    }
+
+    @media screen and (min-width: 992px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  // SECTION 3
+  .accueil-section3 {
+    .accueil-temoignage-quiz {
+      gap: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 14rem;
+      padding-top: 0;
+      padding-bottom: 3rem;
+      padding-left: 5dvw;
+      padding-right: 5dvw;
+
+      user-select: none;
+
+      @media screen and (min-width: 768px) {
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+
+      .accueil-temoignage {
+        cursor: pointer;
+        width: 80dvw;
+        padding: 1rem;
+        padding-left: 5dvw;
+        box-shadow: -4px 4px 16px 1px rgba(0, 0, 0, 0.25);
+
+        @media screen and (min-width: 768px) {
+          width: 45dvw;
+          height: fit-content;
+          box-shadow: none;
+          transition: box-shadow 150ms linear;
+          &:hover {
+            box-shadow: -4px 4px 16px 1px rgba(0, 0, 0, 0.25);
+          }
+        }
+      }
+  
+      .accueil-temoignage-nom-annee {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .accueil-temoignage-nom-annee > p:nth-child(1) {
+        font-weight: bold;
+      }
+  
+      .accueil-temoignage > p:nth-child(1) {
+        font-style: italic;
+
+        &:after {
+          content: "";
+          display: block;
+          width: 5rem;
+          height: 0.2rem;
+          background: var(--couleur-principale);
+          position: relative;
+          left: -5%;
+          margin: 0.5rem 0 0.5rem 0;
+        }
+      }
+    }
+
+    .accueil-temoignage-quiz > a:nth-child(2) {
+      width: 50%;
+
+      @media screen and (min-width: 768px) {
+        width: initial;
+      }
+    }    
+  }
+
+  // SECTION 6
+  .accueil-section6 {
+    ul {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 1rem;
+
+      @media screen and (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2rem;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      a.bouton:nth-child(3) {
+        align-self: center;
+      }
+    }
+  }
+}
+

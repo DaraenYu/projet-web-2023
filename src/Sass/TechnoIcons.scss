@@ -1,0 +1,53 @@
+.TechnoIcons {
+  .techno-container {
+    overflow: hidden;
+
+    h1 {
+      color: var(--couleur-texte);
+      padding: 3rem 5dvw;
+      padding-bottom: 2rem;
+    }
+
+    img {
+      height: 4rem;
+      padding: 1rem;
+      pointer-events: none;
+    }
+
+    .slider1, .slider2 {
+      white-space: nowrap;
+    }
+
+    .img-container-1 {
+      display: inline-block; 
+      animation: scrollX 30s infinite linear;
+    }
+
+    .img-container-2 {
+      display: inline-block; 
+      animation: scroll-X 30s infinite linear;
+      padding-top: 0;
+      padding-bottom: 3rem;
+    }
+
+    @keyframes scrollX {
+      from {
+        transform: translateX(0); 
+      }
+
+      to {
+        transform: translateX(-100%); 
+      }
+    }
+
+    @keyframes scroll-X {
+      from {
+        transform: translateX(-100%); 
+      }
+
+      to {
+        transform: translateX(0); 
+      }
+    }
+  }
+}

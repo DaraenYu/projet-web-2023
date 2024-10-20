@@ -1,0 +1,187 @@
+
+// ------ AFFICHAGE DÉBUT QUIZ ------
+.quiz-debut {
+  width: 90dvw;
+  padding: 5rem 5dvw;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  row-gap: 2rem;
+}
+
+ // ------ AFFICHAGE QUIZ ------
+.Quiz {
+  min-height: 80dvh;
+  
+  button {
+    margin-top: 1rem;
+  }
+
+  .bouton-quiz {
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    background: none;
+    transform: scale(1.5);
+  }
+
+  .quiz-controle {
+    width: 96dvw;
+    padding: 2dvw;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 1rem;
+
+    div {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+
+      .progression {
+        width: 60dvw;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+  
+        span {
+          width: 100%;
+          height: 1.5dvh;
+
+          background-color: lightgray;
+        }
+      }
+    }
+  }
+
+  .zone-reponse {
+    width: 80%;
+    padding: 2rem 10dvw;
+
+    h1 {
+      margin-bottom: 1rem;
+    }
+
+    .elm-reponse {
+
+      cursor: pointer;
+
+      background-color: var(--couleur-question);
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+
+      border-radius: 4px;
+
+      &:hover {
+        background-color: var(--couleur-question-hover);
+      }
+      @media (pointer:none), (pointer:coarse) { // J'adore
+        &:hover {
+          background-color: var(--couleur-question);
+        }
+      }
+    }
+  }
+}
+
+ // ------ AFFICHAGE RÉSULTATS QUIZ ------
+.resultat {
+  width: 90dvw;
+  padding: 4rem 5dvw;
+  background-color: var(--couleur-fond-cours);
+
+  div {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    row-gap: 1rem;
+
+    span {
+      display: flex;
+      column-gap: 1rem;
+    }
+  }
+
+  .textes-resultat-boutons {
+    @media screen and (min-width: 992px) {
+      width: 100%;
+      display: flex;
+      flex-flow: row-reverse nowrap;
+      align-items: center;
+    }
+  }
+
+  .img-resultat {
+    width: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+
+    @media screen and (min-width: 992px) {
+      width: 50%;
+      flex-flow: column nowrap;
+    }
+  
+    // Légende et cercle résultat du quiz
+    .cercle {
+      position: relative;
+      width: 35dvw;
+      height: 35dvw;
+      border-radius: 50%;
+      margin: 10%;
+
+      @media screen and (min-width: 992px) {
+        width: 22dvw;
+        height: 22dvw;
+        margin: 0;
+      }
+      
+      .cercle-trou {
+        position: absolute;
+        border-radius: 50%;
+        background-color: var(--couleur-fond-cours);
+      
+        width: calc(100% - 10dvw);
+        height: calc(100% - 10dvw);
+        top: 5dvw;
+        left: 5dvw;
+    
+        @media screen and (min-width: 992px) {
+          width: calc(100% - 6dvw);
+        height: calc(100% - 6dvw);
+        top: 3dvw;
+        left: 3dvw;
+        }
+      }
+    }
+
+    .legende {
+      div {
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .legende-bullet {
+        width: 0.5rem;
+        height: 0.5rem;
+        margin-right: 0.5rem;
+
+        border-radius: 50%;
+      }
+    }
+  }
+}

@@ -1,0 +1,190 @@
+// Les styles ici se trouve à la racine du site
+// Ici se trouver aussi tout nos variables racine
+
+:root {
+
+  // Couleur
+  .theme-clair {
+
+    --couleur-principale: #003265;
+    --couleur-secondaire: #FCFCFC;
+    --couleur-accent: #FF7B00;
+    --couleur-fond: #FFFFFF;
+    --couleur-texte: #1F1F1F;
+    --couleur-hover: #680FB0;
+    --couleur-forme-mauve: #680fb020;
+    --couleur-forme-bleu: #00326520;
+    --couleur-fond-cours: #F5F5F5;
+    --couleur-question: #d5d5d5;
+    --couleur-question-hover: rgb(207, 175, 138);
+
+  }
+  
+  .theme-sombre {
+
+    --couleur-principale: #004D9B;
+    --couleur-secondaire: #303030;
+    --couleur-accent: #FF9B3D;
+    --couleur-fond: #0F0F0F;
+    --couleur-texte: #FFFFFF;
+    --couleur-hover: #702FE2;
+    --couleur-forme-mauve: #680fb040;
+    --couleur-forme-bleu: #00326540;
+    --couleur-fond-cours: #303030;
+    --couleur-question: #5e5e5e;
+    --couleur-question-hover: rgb(92, 70, 38);;
+
+  }
+
+  --couleur-texte-clair: #FFFFFF;
+  --couleur-fond-code: #303030;
+
+  // Taille de caractère
+  --taille-mobile-texte: 16px;
+  --taille-tablette-texte: 20px;
+  --taille-bureau-texte: 28px;
+
+  --taille-mobile-titre: 34px;
+  --taille-tablette-titre: 44px;
+  --taille-bureau-titre: 54px;
+
+  // Police
+  --police-header: "Archivo Black", monospace;
+  --police-text: "Didact Gothic", monospace;
+  --police-prog: "Source Code Pro", monospace;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  // color: var(--couleur-texte);
+  &::selection {
+    color: var(--couleur-texte-clair);
+    background-color: var(--couleur-accent);
+  }
+  ::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--couleur-fond-code);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--couleur-accent);
+  }
+  ::-webkit-scrollbar-thumb:hover, ::-webkit-scrollbar-thumb:active {
+    background: #9d5613;
+  }
+}
+
+body, html {
+  font-family: var(--police-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--couleur-fond);
+
+  overflow-x: hidden;
+  height: 100dvh;
+  position: relative;
+
+  font-size: var(--taille-mobile-texte);
+
+  @media screen and (min-width: 768px) {
+    font-size: var(--taille-tablette-texte);
+  }
+
+  @media screen and (min-width: 992px) {
+    font-size: var(--taille-bureau-texte);
+  }
+}
+
+h1 {
+  font-family: var(--police-header);
+
+  font-size: var(--taille-mobile-titre);
+
+  @media screen and (min-width: 768px) {
+    font-size: var(--taille-tablette-titre);
+  }
+
+  @media screen and (min-width: 992px) {
+    font-size: var(--taille-bureau-titre);
+  }
+}
+
+code {
+  font-family: var(--police-prog);
+}
+
+section {
+  width: 100dvw;
+}
+
+.titre-bg {
+  background-color: var(--couleur-principale);
+  color: var(--couleur-texte-clair);
+  border: none;
+  border-radius: 2px;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  width: fit-content;
+}
+
+li::marker {
+  color: var(--couleur-accent);;
+
+  @media screen and (min-width: 768px) {
+    font-size: var(--taille-tablette-titre);
+  }
+
+  @media screen and (min-width: 992px) {
+    font-size: var(--taille-bureau-titre);
+  }
+}
+
+a {
+  color: #FFFFFF;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.bouton {
+  background-color: var(--couleur-principale);
+  color: var(--couleur-texte-clair);
+  border: none;
+  border-radius: 0.1rem;
+  height: 5dvw;
+  width: 45dvw;
+  cursor: pointer;
+  display: flex;
+  flex-direction: unset;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  text-decoration: none;
+  transition: background-color 100ms linear;
+
+  &:hover {
+    background-color: var(--couleur-hover);
+    text-decoration: underline;
+  }
+
+  @media screen and (min-width: 361px) {
+    // height: 5dvw;
+    width: 35dvw;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 15dvw;
+  }
+
+  @media screen and (min-width: 1200px) {
+    height: 3dvw;
+    width: 12dvw;
+  }
+}

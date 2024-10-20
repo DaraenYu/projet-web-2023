@@ -1,0 +1,46 @@
+.Page_404 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: 4rem;
+  height: 75dvh;
+
+  .zone-nav404 {
+    width: 90dvw;
+    padding: 3rem 5dvw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1rem;
+
+    @media screen and (min-width: 1600px) {
+      padding: 0 5dvw;
+    }
+
+    .nav404 {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 1rem;
+  
+      @media screen and (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2rem;
+        justify-items: center;
+      }
+  
+      @media screen and (min-width: 992px) {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+  }
+
+  h3 {
+    padding: 1.5rem 0;
+  }
+
+  .bouton {
+    padding: 2rem;
+  }
+}
